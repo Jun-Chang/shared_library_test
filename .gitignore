@@ -1,0 +1,4 @@
+.idea*
+*.iml
+etc/conf/local.toml
+etc/conf/test/local.toml
