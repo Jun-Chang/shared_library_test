@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension name="hello" version="1.0.0">
+  <summary>hello</summary>
+  <description><?data
+This is PHP extension module.
+  ?></description>
+
+  <channel>__uri</channel>
+
+  <deps language="c" platform="all">
+    <with name="libhellogopher" defaults="/gopath" testfile="libhellogopher.h">
+      <header name="libhellogopher.h" path="." />
+      <lib name="hellogopher" platform="all" />
+    </with>
+  </deps>
+
+  <function name="hello" role="public">
+    <proto>void hello()</proto>
+    <summary>hello with go shared library</summary>
+    <code>
+    <![CDATA[
+    helloGopher();
+    php_printf("%d%s", returnInt(), PHP_EOL);
+    php_printf("%s%s", returnStrWithArgs("phper"), PHP_EOL);
+    ]]>
+    </code>
+  </function>
+</extension>
+
